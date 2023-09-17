@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="photos/logo.png" />
+    <title>This is Meghna Singh</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Email Js... -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("3lOmOmnkBPjw-bYSN");
+        })();
+    </script>
 </head>
 <body>
     <!-- navigation section starts -->
@@ -13,7 +25,7 @@
         
         <a href="index.html"><i class="fa-solid fa-house-user"></i><span>Home</span></a>
         <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
-        <a href="project.html"><i class="fa-solid fa-pen"></i><span>Project</span></a>
+        <a href="project.html"><i class="fa-solid fa-pen"></i><span>Projects</span></a>
         <a href="skills.html"><i class="fa-solid fa-head-side-virus"></i><span>Skills</span></a>
         <a href="contact.html"><i class="fa-solid fa-id-badge"></i><span>Contact</span></a>
     
@@ -22,14 +34,14 @@
 
     <!-- contact section starts -->
 <section class="contact">
-    <h1 class="heading">contact<span>me</span></h1>
+    <h1 class="heading">contact<span> me</span></h1>
     <div class="row5">
 
         <div class="info-container4">
 
             <h1>get in touch</h1>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, reprehenderit.</p>
+        <p>Hi,i am Meghna Singh and I am a ReactJS Developer...</p>
 
         <div class="box-container4">
             <div class="box6">
@@ -51,19 +63,19 @@
                     <div class="box6">
                         <i class="fa-solid fa-phone"></i>
                         <div class="info">
-                            <h3>number :</h3>
-                            <p>=+91-7009369466</p>
+                            <h3>Phone no:</h3>
+                            <p>+91 7009369466</p>
                         </div>
                     </div>
 
         </div>
         <div class="share">
-            <a href="#" class="fa-brands fa-instagram"></a>
-            <a href="#" class="fa-brands fa-linkedin"></a>
-            <a href="#" class="fa-brands fa-github"></a>
-            <a href="#" class="fa-brands fa-twitter"></a>
-            <a href="#" class="fa-brands fa-facebook-f"></a>
-            
+            <a href="https://www.instagram.com/" class="fa-brands fa-instagram insta"></a>
+            <a href="https://www.linkedin.com/in/meghna1621/" class="fa-brands fa-linkedin linkedin"></a>
+            <a href="https://github.com/Meghna2916" class="fa-brands fa-github github"></a>
+            <a href="https://twitter.com/" class="fa-brands fa-twitter twitter"></a>
+            <a href="https://www.facebook.com/" class="fa-brands fa-facebook-f facebook"></a>
+        
         </div>
          
        
@@ -73,18 +85,18 @@
     <form action="" >
 
         <div class="inputBox">
-            <input type="text" placeholder="name">
-            <input type="number" placeholder="number">
+            <input type="text" id="name" placeholder="name">
+            <input type="tel" id="number" placeholder="phone no.">
         </div>
 
         <div class="inputBox">
-            <input type="email" placeholder="email">
-            <input type="text" placeholder="subject">
+            <input type="email" id="email" placeholder="email">
+            <input type="text" id="subject" placeholder="subject">
         </div>
 
-        <textarea name="" placeholder="message" id="" cols="30" rows="10"></textarea>
+        <textarea name="" id="message" placeholder="message" id="" cols="30" rows="10"></textarea>
       
-        <input type="submit" value="send message" class="btn">
+        <input type="submit" value="send message" class="btn msg-btn" onclick="sendMail()">
     </form>
 
     </div>
@@ -94,5 +106,35 @@
 
 
     <!-- contact section ends -->
+
+    <script>
+        function sendMail() {
+            var params = {
+                name: document.getElementById("name").value,
+                number:document.getElementById("number").value,
+                email: document.getElementById("email").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value,
+            };
+
+            const serviceID = "service_12fuoha";
+            const templateID = "template_n4dkzsn";
+
+            emailjs
+                .send(serviceID, templateID, params)
+                .then((res) => {
+                    document.getElementById("name").value = "";
+                    document.getElementById("number").value="";
+                    document.getElementById("email").value = "";
+                    document.getElementById("subject").value = "";
+                    document.getElementById("message").value = "";
+                    console.log(res);
+                    alert("Your message sent successfully!!");
+                })
+                .catch((err) => console.log(err));
+            alert("Do you want to send message??");
+        }
+    </script>
+
 </body>
 </html> 
