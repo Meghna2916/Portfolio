@@ -25,29 +25,40 @@
     <h1 class="heading"><span>my</span>project</h1>
 <div class="box-container2">
     <div class="box3">
-        <img src="./photos/project1.png">
+        <img src="./photos/RecipeBook.png">
         <div class="content1">
             <h3>project 01</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repellat laudantium sed illo officia iste magnam temporibus sit libero quo.</p>
-            <a href="#">read more</a>
+            <h5>Recipe App</h5> 
+            <a class="demo" id="demo1" onclick="changeContent()">read more</a>
+           
+            <!-- <button id="demo" onclick="changeContent()" >read more</button> -->
+            <!-- <a href="index.html"><i class="fa-solid fa-house-user"></i><span>Home</span></a> -->
+            
         </div>
+       
     </div>
 
     <div class="box3">
-        <img src="https://as1.ftcdn.net/v2/jpg/05/85/45/62/1000_F_585456252_6wytZvMjzyh87FwBk4jpI8VmaQnJ7gIl.jpg">
+        <img src="./photos/gym2.png">
         <div class="content1">
             <h3>project 02</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repellat laudantium sed illo officia iste magnam temporibus sit libero quo.</p>
-            <a href="#">read more</a>
+            <h5>Gym Project</h5>
+                <!-- <p>It is a web application that is designed to help users maintain their fitness routines from the comfort of
+                    their homes.
+                    </p> -->
+                    <a class="demo" id="demo2" onclick="changeContent()">read more</a>
         </div>
     </div>
 
     <div class="box3">
-        <img src="./photos/noteApp.png">
+        <img src="./photos/project1.png">
         <div class="content1">
             <h3>project 03</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repellat laudantium sed illo officia iste magnam temporibus sit libero quo.</p>
-            <a href="#">read more</a>
+            <h5>Weather Forecast</h5>
+                <!-- <p>It provides users with real-time weather information for their desired locations, enhancing their daily
+                    planning and decision-making</p>
+            <a href="#">read more</a> -->
+            <a class="demo" id="demo2" onclick="changeContent()">read more</a>
         </div>
     </div>
 
@@ -55,8 +66,10 @@
         <img src="./photos/todo.png">
         <div class="content1">
             <h3>project 04</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repellat laudantium sed illo officia iste magnam temporibus sit libero quo.</p>
-            <a href="#">read more</a>
+            <h5>TODO LIST</h5>
+                <!-- <p>Web application that allows users to input their daily chores and notes</p>
+            <a href="#">read more</a> -->
+            <a class="demo" id="demo2" onclick="changeContent()">read more</a>
         </div>
     </div>
 
@@ -64,26 +77,60 @@
         <img src="./photos/hotel.png">
         <div class="content1">
             <h3>project 05</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repellat laudantium sed illo officia iste magnam temporibus sit libero quo.</p>
-            <a href="#">read more</a>
+            <h5>HOTEL BOOKING SYSTEM</h5>
+            <!-- <p>It is a web-based application designed to facilitate the process of
+                 booking hotel rooms for customers. The system allows users to search for hotels based
+                  on various criteria .
+                   </p>
+            <a href="#">read more</a> -->
+            <a class="demo" id="demo2" onclick="changeContent()">read more</a>
         </div>
     </div>
 
     <div class="box3">
-        <img src="./photos/resturant.png">
+        <img src="./photos/noteApp.png">
         <div class="content1">
             <h3>project 06</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repellat laudantium sed illo officia iste magnam temporibus sit libero quo.</p>
-            <a href="#">read more</a>
+            <h5>NOTE TAKING APP</h5>
+                <!-- <p>Web application 
+                    that helps you write and organize your notes and  keeps all your notes updated across all  devices.</p>
+            <a href="#">read more</a> -->
+            <a class="demo" id="demo2" onclick="changeContent()">read more</a>
         </div>
     </div>
 </div>
 
 <a href="#" class="btn">load more <i class="fa-solid fa-redo"></i></a>
 
+
 </section>
 
 
+
+<script>
+    
+    function changeContent() {
+    var card = document.getElementsByClassName("content1")[0];
+    
+    card.innerHTML = `
+      <p>   It is a web application that allows users to look up recipes and nutritional information for any type of
+                food they want.</p>
+                <a class="demo" id="demo 1" onclick="reverseContent()">read less</a> `;
+      
+  }
+
+
+  function reverseContent(){
+  var card = document.getElementsByClassName ("content1")[0];
+  card.innerHTML=`
+        <h3>project 01</h3>
+        <h5>Recipe App</h5>
+        <a class="demo" id="demo 1" onclick="changeContent()">read more</a>`;
+}
+  
+     
+
+</script>
 
     <!-- project section ends -->
 </body>
